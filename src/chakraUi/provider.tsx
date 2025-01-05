@@ -5,8 +5,12 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({
   styles: {
     global: {
-      body: {
-        backgroundImage: "url('/totalbg.png')",
+      body:{
+      background:`linear-gradient(
+          to bottom,
+          rgba(220, 230, 240, 1) 0%, /* Light Blue */
+          rgba(255, 255, 255, 1) 50% /* White */
+        )`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

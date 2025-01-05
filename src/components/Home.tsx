@@ -8,11 +8,12 @@ import {
   Text,
   Button,
   Box,
-  Image
+  Image,
+  SimpleGrid
 } from '@chakra-ui/react'
 
 
-export default function Landing() {
+export default function Home() {
   return (
     <Container maxW={'3xl'} >
       <Stack
@@ -177,6 +178,72 @@ export default function Landing() {
         />
       </Box>
     </Stack>
+    <Flex
+      direction="column"
+      align="center"
+      justify="center"
+      maxW="1200px"
+      mx="auto"
+      py={10}
+      px={4}
+      mt={12}
+    >
+      {/* Paragraph */}
+      <Box mb={6}>
+        <Text
+          fontSize={{ base: 'lg', md: '14px' }}
+          textAlign="center"
+          maxW="800px"
+          mx="auto"
+          color="gray.700"
+        >
+Trusted by the world leading organisations
+        </Text>
+      </Box>
+
+      {/* Images */}
+      <SimpleGrid
+        columns={{ base: 3, md: 6 }} // 3 columns on mobile, 6 on desktop
+        spacing={4}
+        w="100%"
+      >
+        <Box>
+          {/* <Image src="/socialMedia/1.png" alt="Image 1" /> */}
+          <Text
+            fontSize={{ md: '30px' }}
+            fontWeight="bold"
+            bgGradient="linear(to-r, lightgray, gray, #f5f5f5)"           
+            bgClip="text"
+            color="transparent" /* Ensures only the gradient is visible */
+          >
+            GSK
+          </Text>
+        </Box>
+        <Box mt={2}>
+          <Image src="/socialMedia/2.png" alt="Image 2" />
+        </Box>
+        <Box>
+          <Image src="/socialMedia/3.png" alt="Image 3" />
+        </Box>
+        <Box mt={3}>
+          <Image src="/socialMedia/4.png" alt="Image 4" />
+        </Box>
+        <Box mt={3}>
+          <Image src="/socialMedia/1.png" alt="Image 5" />
+        </Box>
+        <Box>
+          <Text
+            fontSize={{ md: '30px' }}
+            fontWeight="bold"
+            bgGradient="linear(to-r, lightgray, gray, #f5f5f5)"           
+            bgClip="text"
+            color="transparent" /* Ensures only the gradient is visible */
+          >
+            GSK
+          </Text>
+        </Box>
+      </SimpleGrid>
+    </Flex>
     </Container>
   )
 }

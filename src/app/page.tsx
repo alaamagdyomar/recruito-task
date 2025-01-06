@@ -3,6 +3,7 @@ import Features from '@/components/Features'
 import HomePage from '../components/Home'
 import Benifits from '../components/Benifits'
 import Faqs from '@/components/Faqs'
+import TesTimonials from '@/components/Testimonials'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
           <Features/>
           <Benifits/>
           <Faqs/>
+          <TesTimonials/>
     </main>
   )
 }

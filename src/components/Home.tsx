@@ -15,7 +15,7 @@ import {
 
 export default function Home() {
   return (
-    <Container maxW={'3xl'} >
+    <Container maxW={'3xl'} mt={20}>
       <Stack
         textAlign={'center'}
         align={'center'}

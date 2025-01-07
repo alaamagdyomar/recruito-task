@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import {
   Box,
@@ -22,12 +22,13 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from '@chakra-ui/icons';
+import Link from 'next/link';
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
+    <Box position="fixed" top={0} width="100%" zIndex={1000}>
       <Flex justify={'center'} mt={'2%'}>
         <Flex
           width={{ base: '85%' }}
@@ -110,19 +111,19 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={'hover'} placement={'bottom-start'}>
             <PopoverTrigger>
-              <Text
-                as={'a'}
-                href={navItem.href ?? '#'}
-                fontSize={'sm'}
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: 'none',
-                  color: linkHoverColor,
-                }}
-              >
-                {navItem.label}
-              </Text>
+              <Link href={navItem.href ?? '#'} passHref>
+                <Text
+                  fontSize={'sm'}
+                  fontWeight={500}
+                  color={linkColor}
+                  _hover={{
+                    textDecoration: 'none',
+                    color: linkHoverColor,
+                  }}
+                >
+                  {navItem.label}
+                </Text>
+              </Link>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -203,7 +204,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
         py={2}
-        as={'a'}
+        as={Link}
         href={href ?? '#'}
         justify={'space-between'}
         align={'center'}
@@ -256,18 +257,26 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: 'Home',
-    href: '#',
+    href: '#home',
   },
   {
     label: 'Features',
-    href:'#'
+    href: '#features',
   },
   {
-    label: 'Pricing',
-    href: '#',
+    label: 'Benefits',
+    href: '#benefits',
   },
   {
-    label: 'Resources',
-    href: '#',
+    label: 'FAQs',
+    href: '#faqs',
+  },
+  {
+    label: 'Testimonials',
+    href: '#testimonials',
+  },
+  {
+    label: 'Enhance',
+    href: '#enhance',
   },
 ];

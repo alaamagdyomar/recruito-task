@@ -4,6 +4,7 @@ import HomePage from '../components/Home'
 import Benifits from '../components/Benifits'
 import Faqs from '@/components/Faqs'
 import TesTimonials from '@/components/Testimonials'
+import Enhance from '@/components/Enhance'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
           <Benifits/>
           <Faqs/>
           <TesTimonials/>
+          <Enhance/>
     </main>
   )
 }

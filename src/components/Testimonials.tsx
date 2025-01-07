@@ -68,7 +68,7 @@ function TestimonialCard(props: TestimonialCardProps) {
   return (
     <Flex
       boxShadow="lg"
-      width="600px"
+      width={{base:'300px' ,md:'450px' , lg:'600px'}}
       height="auto"
       direction="column"
       rounded="xl"
@@ -115,7 +115,7 @@ export default function Testimonials() {
           fontWeight="bold"
           color={'#004CD3'}
         >
-          Benifits
+          Testimonials
         </Button>
       </Flex>
         <Text mb={10} color={'black'} fontWeight={'bold'} fontSize={{ base: 'sm', lg: '44px' }}>
